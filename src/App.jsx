@@ -7,12 +7,6 @@ import { XR, createXRStore } from "@react-three/xr";
 function App() {
   const store = createXRStore();
 
-  if (navigator.xr) {
-    console.log("supported");
-  } else {
-    console.log("not supported");
-  }
-
   return (
     <>
       <div className="app">
@@ -27,7 +21,7 @@ function App() {
         </button>
         <Canvas>
           <XR store={store}>
-            <mesh>
+            <mesh position-z={-5}>
               <boxGeometry />
               <meshStandardMaterial color={"blue"} />
             </mesh>
